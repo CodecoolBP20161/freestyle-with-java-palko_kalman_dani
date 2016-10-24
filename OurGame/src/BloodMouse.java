@@ -1,2 +1,3 @@
-public class BloodMouse {
+public class BloodMouse extends Monster {
+
 }
