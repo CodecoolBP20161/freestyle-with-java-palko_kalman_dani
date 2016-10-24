@@ -1,7 +1,8 @@
-package PACKAGE_NAME;
-
-/**
- * Created by kalman on 2016.10.24..
- */
 public class Player {
+    String name = null;
+    int health = 10;
+    int damagePerHit = 0;
+
+    // name input -> name
+//    public static string getName {}
 }
