@@ -1,8 +1,15 @@
+import java.util.*;
+
 public class Player {
     String name = null;
     int health = 10;
     int damagePerHit = 0;
 
-    // name input -> name
-//    public static string getName {}
+
+    public  void setName() {
+      System.out.println("Enter your name");
+      Scanner nameInput = new Scanner( System.in );
+      String name = nameInput.nextLine();
+      this.name = name;
+  }
 }
