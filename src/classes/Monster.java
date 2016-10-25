@@ -1,3 +1,5 @@
+package classes;
+
 public class Monster  {
     private String name;
     private int health;
