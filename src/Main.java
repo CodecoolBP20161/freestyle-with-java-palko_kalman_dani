@@ -14,13 +14,11 @@ public class Main {
                 break;
         }
 
-
         switch (player1.choice()) {
             case 'A':
-                Monster z1 = new BloodMouse("Adam, the zombie");
-
+                Monster z = new Zombie("Adam, the zombie");
                 Combat kitchen = new Combat();
-                System.out.println(kitchen.fight(player1, z1));
+                System.out.println(kitchen.fight(player1, z));
                 text.read("story/3");
                 break;
             case 'B': text.read("story/4");
@@ -63,7 +61,11 @@ public class Main {
         }
 
         switch (player1.choice()) {
-            case 'A': text.read("story/15");
+            case 'A':
+                Monster bm = new BloodMouse("Charlie, the blood-mouse");
+                Combat kitchen = new Combat();
+                System.out.println(kitchen.fight(player1, bm));
+                text.read("story/15");
                 System.exit(0);
             case 'B': text.read("story/16");
                 break;
