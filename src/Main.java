@@ -2,18 +2,71 @@ import classes.*;
 
 public class Main {
     public static void main(String[] args) {
+        Player player1 = new Player("Default", 21, 3);
+        player1.setName();
+        TextReader text = new TextReader();
 
-//        TextReader test = new TextReader();
-//        int num = 1;
-//        test.read("text/test"+num+".txt");
+        text.read("story/0");
+        switch (player1.choice()) {
+            case 'A': text.read("story/1");
+                System.exit(0);
+            case 'B': text.read("story/2");
+                break;
+        }
 
-        Player player1 = new Player("Bob", 10, 5);
-//        player1.setName();
-//        System.out.println(player1.getName());
 
-        Monster m1 = new BloodMouse("Charlie");
+        switch (player1.choice()) {
+            case 'A':
+                Monster z1 = new BloodMouse("Adam, the zombie");
 
-        Combat kitchen = new Combat();
-        System.out.println(kitchen.fight(player1, m1));
+                Combat kitchen = new Combat();
+                System.out.println(kitchen.fight(player1, z1));
+                text.read("story/3");
+                break;
+            case 'B': text.read("story/4");
+                System.exit(0);
+        }
+
+        switch (player1.choice()) {
+            case 'A': text.read("story/5");
+                System.exit(0);
+            case 'B': text.read("story/6");
+                break;
+        }
+
+        switch (player1.choice()) {
+            case 'A': text.read("story/7");
+                System.exit(0);
+            case 'B': text.read("story/8");
+                break;
+        }
+
+        switch (player1.choice()) {
+            case 'A': text.read("story/9");
+                break;
+            case 'B': text.read("story/10");
+                System.exit(0);
+        }
+
+        switch (player1.choice()) {
+            case 'A': text.read("story/11");
+                System.exit(0);
+            case 'B': text.read("story/12");
+                break;
+        }
+
+        switch (player1.choice()) {
+            case 'A': text.read("story/13");
+                break;
+            case 'B': text.read("story/14");
+                System.exit(0);
+        }
+
+        switch (player1.choice()) {
+            case 'A': text.read("story/15");
+                System.exit(0);
+            case 'B': text.read("story/16");
+                break;
+        }
     }
 }
