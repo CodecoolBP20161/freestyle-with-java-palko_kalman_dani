@@ -1,7 +1,6 @@
 package classes;
 
-import java.util.*;
-
+import java.util.Scanner;
 public class Player {
     private String name;
     private int health;
@@ -17,8 +16,8 @@ public class Player {
         return name;
     }
 
-    public  void setName() {
-        System.out.println("Enter your name");
+    public void setName() {
+        System.out.println("Enter your name: ");
         Scanner nameInput = new Scanner( System.in );
         String name = nameInput.nextLine();
         this.name = name;
@@ -38,5 +37,17 @@ public class Player {
 
     public void setDamagePerHit(int damagePerHit) {
         this.damagePerHit = damagePerHit;
+    }
+
+    public Character choice() {
+        System.out.println("Enter your choice: ");
+        Scanner choiceInput = new Scanner( System.in );
+        Character choice = choiceInput.next().charAt(0);
+        choice = Character.toUpperCase(choice);
+        if ((choice!='A')&&(choice!='B')) {
+            System.out.println("stupidUserError: Game over, dude!");
+            System.exit(0);
+        }
+        return choice;
     }
 }
