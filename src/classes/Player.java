@@ -39,14 +39,13 @@ public class Player {
         this.damagePerHit = damagePerHit;
     }
 
-    public Character choice() {
-        System.out.println("Enter your choice: ");
+    public Character choice() throws stupidUserError {
+        System.out.println("\nEnter your choice (A or B)!\n(letter size doesn't matter)");
         Scanner choiceInput = new Scanner( System.in );
         Character choice = choiceInput.next().charAt(0);
         choice = Character.toUpperCase(choice);
         if ((choice!='A')&&(choice!='B')) {
-            System.out.println("stupidUserError: Game over, dude!");
-            System.exit(0);
+            throw new stupidUserError("Game over, dude!");
         }
         return choice;
     }
