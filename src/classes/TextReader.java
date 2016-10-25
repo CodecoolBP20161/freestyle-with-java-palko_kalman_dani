@@ -1,12 +1,13 @@
+package classes;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class TextReader {
 
-    public static void main(String[] args) {
-
-        try (BufferedReader br = new BufferedReader(new FileReader("text/test.txt")))
+    public void read (String FileName) {
+        try (BufferedReader br = new BufferedReader(new FileReader(FileName)))
         {
 
             String sCurrentLine;
@@ -18,6 +19,5 @@ public class TextReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }
