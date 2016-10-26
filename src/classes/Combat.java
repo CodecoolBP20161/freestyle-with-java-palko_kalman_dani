@@ -18,7 +18,7 @@ public class Combat {
             System.out.println("ROUND: "+i+"\n"+"--------");
         }
 //        if something wrong happens, we return null(but it's almost impossible)
-//        (however this case handled in GameEngine for safety's sake
+//        (however this case handled in GameEngines run method for safety's sake)
         return null;
     }
 }
