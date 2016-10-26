@@ -2,73 +2,33 @@ import classes.*;
 
 public class Main {
     public static void main(String[] args) {
-        Player player1 = new Player("Default", 21, 3);
-        player1.setName();
-        TextReader text = new TextReader();
+        //initializing the game
+        //if you need more info of something, look at the class with its name
+        Player player = new Player(null, 9, 3);
+        player.setName();
+        Monster zombie = new Zombie("Adam, the zombie");
+        Monster bloodMouse = new BloodMouse("Charlie, the blood-mouse");
+        Combat office = new Combat();
+        Combat kitchen = new Combat();
+        TextReader text = new TextReader(1);
+        text.read(0);
+        GameEngine chapter1 = new GameEngine(player, text);
 
-        text.read("story/0");
-        switch (player1.choice()) {
-            case 'A': text.read("story/1");
-                System.exit(0);
-            case 'B': text.read("story/2");
-                break;
-        }
+        //here is the story-line
+        chapter1.run(1, true);
 
-        switch (player1.choice()) {
-            case 'A':
-                Monster z = new Zombie("Adam, the zombie");
-                Combat kitchen = new Combat();
-                System.out.println(kitchen.fight(player1, z));
-                text.read("story/3");
-                break;
-            case 'B': text.read("story/4");
-                System.exit(0);
-        }
+        chapter1.runCombat(3, false, office, player, zombie);
 
-        switch (player1.choice()) {
-            case 'A': text.read("story/5");
-                System.exit(0);
-            case 'B': text.read("story/6");
-                break;
-        }
+        chapter1.run(5, true);
 
-        switch (player1.choice()) {
-            case 'A': text.read("story/7");
-                System.exit(0);
-            case 'B': text.read("story/8");
-                break;
-        }
+        chapter1.run(7, true);
 
-        switch (player1.choice()) {
-            case 'A': text.read("story/9");
-                break;
-            case 'B': text.read("story/10");
-                System.exit(0);
-        }
+        chapter1.run(9, false);
 
-        switch (player1.choice()) {
-            case 'A': text.read("story/11");
-                System.exit(0);
-            case 'B': text.read("story/12");
-                break;
-        }
+        chapter1.run(11, true);
 
-        switch (player1.choice()) {
-            case 'A': text.read("story/13");
-                break;
-            case 'B': text.read("story/14");
-                System.exit(0);
-        }
+        chapter1.run(13, false);
 
-        switch (player1.choice()) {
-            case 'A':
-                Monster bm = new BloodMouse("Charlie, the blood-mouse");
-                Combat kitchen = new Combat();
-                System.out.println(kitchen.fight(player1, bm));
-                text.read("story/15");
-                System.exit(0);
-            case 'B': text.read("story/16");
-                break;
-        }
+        chapter1.runCombat(15, true, kitchen, player, bloodMouse);
     }
 }
