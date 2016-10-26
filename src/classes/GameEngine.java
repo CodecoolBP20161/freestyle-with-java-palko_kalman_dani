@@ -39,18 +39,21 @@ public class GameEngine {
     //this is the method we use at the chapters when there is fight in the story
     //it's mostly the same as the first method, except one line...
     //...we can't solve the problem of using optional  arguments in java
-    public void run(int page1, boolean arg, Combat combat, Player player, Monster monster) {
+    public void run(int page, boolean arg, Combat combat, Player player, Monster monster)
+            throws IllegalArgumentException {
         try
         {
             switch (this.player.choice()) {
                 case 'A':
                     //here runs the fight method of Combat -- details in the Combat class
-                    System.out.println(combat.fight(player, monster));
-                    this.text.read(page1);
+                    String winnerText = combat.fight(player, monster);
+                    if (winnerText==null) {throw new IllegalArgumentException("The winner can't be null!");}
+                    System.out.println(winnerText);
+                    this.text.read(page);
                     if(arg){System.exit(0);}
                     else {break;}
                 case 'B':
-                    this.text.read(page1+1);
+                    this.text.read(page+1);
                     if(arg){break;}
                     else {System.exit(0);}
             }
