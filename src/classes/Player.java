@@ -16,6 +16,8 @@ public class Player {
         return name;
     }
 
+
+    //setup the players name what we got from the user-input
     public void setName() {
         System.out.println("Enter your name: ");
         Scanner nameInput = new Scanner( System.in );
@@ -39,13 +41,16 @@ public class Player {
         this.damagePerHit = damagePerHit;
     }
 
-    public Character choice() throws stupidUserError {
+    //The user can choose the option 'A' or 'B' by typing these letters.
+    //Any other cases an error raised(for more info look at the StupidUserError class)
+    public Character choice() throws StupidUserError {
         System.out.println("\nEnter your choice (A or B)!\n(letter size doesn't matter)");
         Scanner choiceInput = new Scanner( System.in );
         Character choice = choiceInput.next().charAt(0);
+        //the letter-size doesn't matter
         choice = Character.toUpperCase(choice);
         if ((choice!='A')&&(choice!='B')) {
-            throw new stupidUserError("Game over, dude!");
+            throw new StupidUserError("Game over, dude!");
         }
         return choice;
     }

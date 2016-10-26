@@ -11,6 +11,7 @@ public class Monster  {
         this.damagePerHit = damagePerHit;
     }
 
+    //we need some setters and getters because of the private methods attributes
     public String getName() {
         return name;
     }
