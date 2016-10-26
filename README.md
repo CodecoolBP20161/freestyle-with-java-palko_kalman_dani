@@ -22,4 +22,4 @@
 1. You need a Java SDK (from [Oracle](https://www.oracle.com)) (and maybe an IDLE, too)
 2. Then compile the code and run the Main.java (in the src folder) and enjoy the game! :wink:
 
-_(We developed on Ubuntu 16.04 witd SDK 1.8)_
+_(We developed on Ubuntu 16.04 with SDK 1.8)_
