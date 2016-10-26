@@ -39,7 +39,7 @@ public class GameEngine {
     //this is the method we use at the chapters when there is fight in the story
     //it's mostly the same as the first method, except one line...
     //...we can't solve the problem of using optional  arguments in java
-    public void runCombat(int page1, boolean arg, Combat combat, Player player, Monster monster) {
+    public void run(int page1, boolean arg, Combat combat, Player player, Monster monster) {
         try
         {
             switch (this.player.choice()) {

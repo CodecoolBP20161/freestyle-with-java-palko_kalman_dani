@@ -17,7 +17,7 @@ public class Main {
         //here is the story-line
         chapter1.run(1, true);
 
-        chapter1.runCombat(3, false, office, player, zombie);
+        chapter1.run(3, false, office, player, zombie);
 
         chapter1.run(5, true);
 
@@ -29,6 +29,6 @@ public class Main {
 
         chapter1.run(13, false);
 
-        chapter1.runCombat(15, true, kitchen, player, bloodMouse);
+        chapter1.run(15, true, kitchen, player, bloodMouse);
     }
 }
