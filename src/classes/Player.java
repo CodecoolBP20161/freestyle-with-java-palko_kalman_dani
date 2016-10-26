@@ -50,6 +50,7 @@ public class Player {
         //the letter-size doesn't matter
         choice = Character.toUpperCase(choice);
         if ((choice!='A')&&(choice!='B')) {
+            System.out.println("I already said you can choose A or B!");
             throw new StupidUserError("Game over, dude!");
         }
         return choice;
